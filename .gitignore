@@ -1,0 +1,45 @@
+# Folders to ignore, whatever the place they are
+
+.metadata
+classes
+gensrc
+
+# Folders to ignore at the root of the repository
+log/
+temp/
+data/
+licenses/
+
+# filter only custom extension
+bin/*
+!bin/custom/
+
+# Filename patterns to ignore
+*.class
+*.iml
+build.xml
+Generated*.java
+platformhome.properties
+*testclasses.xml
+extensioninfo.xsd
+*hmc.jar
+hmc.xsd
+items.xsd
+beans.xsd
+ruleset.xml
+*.log
+base.properties
+.lastupdate
+
+# IDE ignored files
+**/eclipsebin/
+.springBeans
+.springBeans.new
+.classpath.bak
+org.sonarlint.eclipse.core.prefs
+.idea/*
+idea-module-files/
+config/licence/installedSaplicenses.properties
+
+#Sonar
+**/.scannerwork/**
