@@ -12,14 +12,14 @@ class RotateArraySolutionImplTest
 {
 
     @ParameterizedTest
-    @MethodSource("provideArrays")
-    void testBark(int[] givenArray, int steps, int[] expectedArray)
+    @MethodSource("provideTestData")
+    void test(int[] givenArray, int steps, int[] expectedArray)
     {
         int[] actualArray = RotateArraySolutionImpl.execute(givenArray, steps);
         assertArrayEquals(expectedArray, actualArray);
     }
 
-    private static Stream<Arguments> provideArrays()
+    private static Stream<Arguments> provideTestData()
     {
         return Stream.of(
                 Arguments.of(new int[]{1, 2, 3}, 1, new int[]{3, 1, 2}),
