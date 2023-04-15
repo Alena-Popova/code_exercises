@@ -11,14 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RemoveDuplicatesImplTest
 {
     @ParameterizedTest
-    @MethodSource("provideArrays")
-    void testBark(int[] array, int expectedResult)
+    @MethodSource("provideTestData")
+    void test(int[] array, int expectedResult)
     {
         int actualResult = RemoveDuplicatesImpl.execute(array);
         assertEquals(expectedResult, actualResult);
     }
 
-    private static Stream<Arguments> provideArrays()
+    private static Stream<Arguments> provideTestData()
     {
         return Stream.of(
                 Arguments.of(new int[]{}, 0),
