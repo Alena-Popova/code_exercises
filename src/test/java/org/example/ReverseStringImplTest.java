@@ -23,6 +23,7 @@ class ReverseStringImplTest
     {
         return Stream.of(
                 Arguments.of(new char[]{'s'}, new char[]{'s'}),
+                Arguments.of(new char[]{'s', 'w'}, new char[]{'w', 's'}),
                 Arguments.of(new char[]{'s', 'e', 'r'}, new char[]{'r', 'e', 's'}),
                 Arguments.of(new char[]{'s', 'e', 'r', 'a'}, new char[]{'a', 'r', 'e', 's'})
         );
