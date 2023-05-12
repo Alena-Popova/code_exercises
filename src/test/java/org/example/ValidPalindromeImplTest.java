@@ -24,7 +24,8 @@ class ValidPalindromeImplTest
         return Stream.of(
                 Arguments.of("A man, a plan, a canal: Panama", true),
                 Arguments.of("race a car", false),
-                Arguments.of("  ", true)
+                Arguments.of("  ", true),
+                Arguments.of("0P", false)
         );
     }
 

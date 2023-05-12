@@ -14,9 +14,10 @@ public class ValidPalindromeImpl
      */
     public static boolean isPalindrome(String s)
     {
-        Pattern pattern = Pattern.compile("[^a-zA-Z1-9]");
+        Pattern pattern = Pattern.compile("[^a-zA-Z0-9]");
         Matcher matcher = pattern.matcher(s);
         String validString = matcher.replaceAll("").toLowerCase();
+        System.out.println(validString);
         int length = validString.length();
         if (length <= 1)
         {
