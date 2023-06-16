@@ -25,4 +25,28 @@ public class ReverseIntegerImpl
         int result = Integer.parseInt(String.valueOf(intValue));
         return isNegative ? -1 * result : result;
     }
+
+    public static int reverse_2(int x)
+    {
+        long finalNum = 0;
+        while (x != 0)
+        {
+            int lastDig = x % 10;
+            finalNum += lastDig;
+            if (Math.abs(x) >= 10)
+            {
+                finalNum = finalNum * 10;
+            }
+            x = x / 10;
+        }
+        if (finalNum > Integer.MAX_VALUE || finalNum < Integer.MIN_VALUE)
+        {
+            return 0;
+        }
+        if (x < 0)
+        {
+            return (int) (-1 * finalNum);
+        }
+        return (int) finalNum;
+    }
 }

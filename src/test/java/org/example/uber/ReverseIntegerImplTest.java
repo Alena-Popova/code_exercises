@@ -15,7 +15,7 @@ class ReverseIntegerImplTest
     @MethodSource("provideTestData")
     void test(int value, int expectedResult)
     {
-        int actualResult = ReverseIntegerImpl.reverse(value);
+        int actualResult = ReverseIntegerImpl.reverse_2(value);
         assertEquals(expectedResult, actualResult);
     }
 
@@ -23,6 +23,7 @@ class ReverseIntegerImplTest
     {
         return Stream.of(
                 Arguments.of(-1234, -4321),
+                Arguments.of(-1033, -3301),
                 Arguments.of(-1, -1),
                 Arguments.of(10, 1),
                 Arguments.of(12, 21)
