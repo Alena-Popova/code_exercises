@@ -1,4 +1,4 @@
-package org.example.interviewcake;
+package org.example.dynamic;
 
 public class MaximumSubarrayImpl
 {
