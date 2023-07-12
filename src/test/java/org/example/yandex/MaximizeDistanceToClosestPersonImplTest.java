@@ -15,7 +15,6 @@ class MaximizeDistanceToClosestPersonImplTest
     @MethodSource("provideTestData")
     void test(int[] seats, int expectedResult)
     {
-        System.out.printf("Start %s\n", Arrays.toString(seats));
         int actualResult = MaximizeDistanceToClosestPersonImpl.maxDistToClosest(seats);
         assertEquals(expectedResult, actualResult);
     }
