@@ -17,7 +17,6 @@ class SquaresOfASortedArrayImplTest
     void test(int[] seats, int[] expectedResult)
     {
         int[] actualResult = SquaresOfASortedArrayImpl.sortedSquares(seats);
-        System.out.printf("Result = %s\n", Arrays.toString(actualResult));
         assertArrayEquals(expectedResult, actualResult);
     }
 
