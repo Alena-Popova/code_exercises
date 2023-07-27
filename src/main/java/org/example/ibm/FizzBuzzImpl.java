@@ -1,4 +1,4 @@
-package org.example.IBM;
+package org.example.ibm;
 
 import java.util.List;
 import java.util.stream.Collectors;

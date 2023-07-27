@@ -1,4 +1,4 @@
-package org.example.IBM;
+package org.example.ibm;
 
 /**
  * https://leetcode.com/problems/find-the-difference/description/
