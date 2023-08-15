@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 class MergeSortedArrayImplTest
 {
 
-
     @ParameterizedTest
     @MethodSource("provideTestData")
     void test(int[] nums1, int m, int[] nums2, int n, int[] expectedResult)
