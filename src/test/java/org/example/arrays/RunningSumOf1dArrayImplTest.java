@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 class RunningSumOf1dArrayImplTest
 {
 
-
     @ParameterizedTest
     @MethodSource("provideTestData")
     void test(int[] nums, int[] expectedResult)
