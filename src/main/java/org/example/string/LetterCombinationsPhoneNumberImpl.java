@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
  * Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
  * <p>
  * A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
@@ -22,7 +23,7 @@ public class LetterCombinationsPhoneNumberImpl
         put(5, Arrays.asList('j', 'k', 'l'));
         put(6, Arrays.asList('m', 'n', 'o'));
         put(7, Arrays.asList('p', 'q', 'r', 's'));
-        put(8, Arrays.asList('t', 'u', 'w'));
+        put(8, Arrays.asList('t', 'u', 'v'));
         put(9, Arrays.asList('w', 'x', 'y', 'z'));
     }};
 
@@ -33,24 +34,32 @@ public class LetterCombinationsPhoneNumberImpl
         {
             return result;
         }
-        List<Integer> pointer = Collections.nCopies(digits.length(), 0);
-        composeLetters(result, digits, pointer);
+        backtracking(result, "", digits, 0);
         return result;
     }
 
-    private static void composeLetters(List<String> result, String digits, List<Integer> counters)
+    private static void backtracking(List<String> results, String current, String digits, int cursor)
     {
-        StringBuilder combination = new StringBuilder();
-        for (int i = 0; i < counters.size(); i++)
+        if (cursor >= digits.length())
         {
-            int digit =  Character.getNumericValue(digits.charAt(i));
-            List<Character> chars = digitToLetters.getOrDefault(digit, Collections.emptyList());
-            if (!chars.isEmpty())
+            if (!current.isEmpty())
             {
-                int position = counters.get(i);
-                combination.append(chars.get(position));
+                results.add(current);
+            }
+            return;
+        }
+
+        Integer currentNumber = Character.getNumericValue(digits.charAt(cursor));
+        if (currentNumber == 1)
+        {
+            backtracking(results, current, digits, ++cursor);
+        }
+        else
+        {
+            for (Character letter : digitToLetters.getOrDefault(currentNumber, Collections.emptyList()))
+            {
+                backtracking(results, current + letter, digits, cursor + 1);
             }
         }
-        result.add(combination.toString());
     }
 }
